@@ -5,8 +5,8 @@
   "main": "index.js",
   "repository": "",
   "scripts": {
-    "build:local": "webpack --config ./webpack.prod.config.js --progress --colors",
-    "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
+    "build:production": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
+    "build": "webpack --config ./webpack.prod.config.js --progress --colors",
     "start": "node bootstrap.js",
     "serve": "webpack --config ./webpack.dev.config.js && node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./webpack.dev.config.js  --inline --progress --colors --host 0.0.0.0 --port 4080",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
