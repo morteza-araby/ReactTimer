@@ -71,6 +71,12 @@ module.exports = {
         ]
     },
     plugins: [
+         new CleanWebpackPlugin([PATHS.build], {
+             root: __dirname,
+             verbose: true,
+             dry: false,
+             exclude: ['shared.js']
+         }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
@@ -89,20 +95,14 @@ module.exports = {
                 to: ""
             },
             {
-                from: PATHS.app + "/style",
-                to: "style/"
-            }
+                from: PATHS.app + "/assets/favicon.ico",
+                to: ""
+            } 
         ]),
         new webpack.ProvidePlugin({
             '$': 'jquery',
             'jQuery': 'jquery'
-        }),
-         new CleanWebpackPlugin([PATHS.build], {
-             root: __dirname,
-             verbose: true,
-             dry: false,
-             exclude: ['shared.js']
-         })
+        })        
     ],
     /* devtool: 'cheap-module-eval-source-map',*/
     /*devtool: 'source-map',*/
