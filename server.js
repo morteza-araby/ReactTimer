@@ -18,9 +18,9 @@ module.exports = {
     })
     app.use(express.static(__dirname + '/public'))
 
-   app.listen(PORT, function () {
+   /* app.listen(PORT, function () {
       console.log('Express server is up on port ' + PORT)
-    })
+    })*/
     return app
   }
 }
