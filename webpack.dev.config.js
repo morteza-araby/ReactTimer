@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 const path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const PATHS = {
     app: path.join(__dirname, 'src'),
@@ -70,6 +71,12 @@ module.exports = {
         ]
     },
     plugins: [
+         new CleanWebpackPlugin([PATHS.build], {
+             root: __dirname,
+             verbose: true,
+             dry: false,
+             exclude: ['shared.js']
+         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
