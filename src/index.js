@@ -8,7 +8,7 @@ import reducers from './reducers'
 import routes from './routes'
 
 // Load foundation
-require('foundation-sites/dist/foundation.min.css')
+//require('foundation-sites/dist/foundation.min.css')
 require('./styles/app.scss')
 
 $(document).foundation()
